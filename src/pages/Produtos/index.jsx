@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import prod1 from '../../assets/prod1.png';
 import prod2 from '../../assets/prod2.png';
 import prod3 from '../../assets/prod3.png';
@@ -9,6 +10,7 @@ import prod7 from '../../assets/prod7.png';
 import prod8 from '../../assets/prod8.png';
 import prod9 from '../../assets/prod9.png';
 import Button from '../../components/Button';
+import { listarProduto } from '../../services/ProductService';
 import { Div1, Div2 } from './styles';
 
 const Produtos = () => {
@@ -59,6 +61,15 @@ const Produtos = () => {
       img: prod9,
     },
   ]);
+
+  // Se for mostrar pro professor comenta o useEffect
+  // porque provavelmente nao tem nada no banco de dados de product
+  useEffect(() => {
+    listarProduto().then(products => {
+      setProdutos(products);
+    });
+  }, []);
+  // Comenta ate aqui
   return (
     <Div1>
       {produtos.map(produto => (
