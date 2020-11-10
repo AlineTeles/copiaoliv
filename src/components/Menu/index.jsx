@@ -7,13 +7,13 @@ import logoMarca from '../../assets/logoMarca.png';
 import cartImage from '../../assets/cart.png';
 import { Container } from './styles';
 import { useAuth } from '../../hooks/useAuth';
+import ButtonForm from '../ButtonForm';
 
 const Menu = () => {
   const { token, signOut } = useAuth();
   return (
     <Container>
       <nav>
-        c
         <div>
           <img src={logoImagem} alt="Logo Imagem" />
           <img src={logoMarca} alt="Logo Marca" />
@@ -47,9 +47,9 @@ const Menu = () => {
           )}
           {!!token && (
             <li>
-              <button type="button" onClick={signOut}>
+              <ButtonForm type="button" onClick={signOut}>
                 Sair
-              </button>
+              </ButtonForm>
             </li>
           )}
         </ul>
