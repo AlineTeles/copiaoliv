@@ -14,7 +14,6 @@ const Menu = () => {
   return (
     <Container>
       <nav>
-        c
         <div>
           <img src={logoImagem} alt="Logo Imagem" />
           <img src={logoMarca} alt="Logo Marca" />
